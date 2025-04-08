@@ -64,7 +64,7 @@ git push -u origin main
 mkdir my_project
 cd my_project
 git init
-
+```
 
 ----
 ##Синхронизация локального и удалённого репозиториев
