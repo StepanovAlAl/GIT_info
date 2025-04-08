@@ -27,7 +27,21 @@
 4. Следуйте инструкциям на GitHub, чтобы связать локальный репозиторий с удалённым.
 
 ----
+mkdir my-git-repo
+cd my-git-repo
 
+git init
+
+touch README.md
+-
+git remote add origin <URL-вашего-репозитория>
+-
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+
+
+----
 ## Выделение текста
 
 Вы можете выделять текст в markdown с помощью символов `_` или `*`. Например:
@@ -44,10 +58,31 @@
 
 ## Выделение кода
 
-Чтобы выделить текст как код, поместите его в тройные кавычки `````. 
+Чтобы выделить текст как код, поместите его в тройные кавычки --`````. 
 
 ```
 mkdir my_project
 cd my_project
 git init
-```
+
+
+----
+##Синхронизация локального и удалённого репозиториев
+git remote add origin https://github.com/YandexPracticum/first-project.git (от англ. remote, «удалённый» + add, «добавить») — привяжи локальный репозиторий к удалённому с URL https://github.com/YandexPracticum/first-project.git;
+git remote -v (от англ. verbose, «подробный») — проверь, что репозитории действительно связались;
+git push -u origin main (от англ. push, «толкать») — в первый раз загрузи все коммиты из локального репозитория в удалённый с названием origin.
+git push (от англ. push, «толкать») — загрузи коммиты в удалённый репозиторий после того, как он был привязан с помощью флага -u.
+
+##Копирование чужих репозиториев
+Клонирование
+git clone git@github.com:TheGreatOwner/the-great-project.git (от англ. clone, «клон», «копия») — склонируй репозиторий с URL the-great-project.git из аккаунта TheGreatOwner на мой локальный компьютер.
+
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged    -- "???"     --> tracked/comitted;
+
+%% стрелка без текста для примера: 
+  A --> B;
+``` 
